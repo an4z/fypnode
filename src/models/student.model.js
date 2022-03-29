@@ -1,8 +1,13 @@
 var dbConn  = require('../../config/db.config');
 
 var Student = function(student){
-    this.studentID = student.ID;
-    this.studentName = student.StudentName;
+    this.studentID = student.studentID;
+    this.fullName = student.fullName;
+    this.username = student.username;
+    this.collegeID = student.collegeID;
+    this.email = student.email;
+    this.sectionID = student.sectionID;
+    this.password = student.password;
 }
 
 // get all students
@@ -41,18 +46,19 @@ Student.getStudentByID = (id, result)=>{
     })
 }
 
-// // create new student
-// Student.createStudent = (studentReqData, result) =>{
-//     dbConn.query('INSERT INTO students SET ? ', studentReqData, (err, res)=>{
-//         if(err){
-//             console.log('Error while inserting data');
-//             result(null, err);
-//         }else{
-//             console.log('Student created successfully');
-//             result(null, res)
-//         }
-//     })
-// }
+// create new student
+Student.createStudent = (studentReqData, result) =>{
+    dbConn.query('INSERT INTO student SET ? ', studentReqData, (err, res)=>{
+        if(err){
+            console.log('Error while inserting data');
+            console.log(err);
+            result(null, err);
+        }else{
+            console.log('Student created successfully');
+            result(null, res)
+        }
+    })
+}
 
 // // update student
 // Student.updateStudent = (id, studentReqData, result)=>{

@@ -9,8 +9,8 @@ router.get('/', studentController.getStudentList);
 // get student by ID
 router.get('/:id',studentController.getStudentByID);
 
-// // create new student
-// router.post('/', studentController.createNewStudent);
+// create new student
+router.post('/', studentController.createNewStudent);
 
 // // update student
 // router.put('/:id', studentController.updateStudent);

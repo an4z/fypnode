@@ -21,11 +21,15 @@ app.get('/', (req, res)=>{
 const employeeRoutes = require('./src/routes/employee.route');
 const collegeRoutes = require('./src/routes/college.route');
 const studentRoutes = require('./src/routes/student.route');
+const sectionRoutes = require('./src/routes/section.route');
+const webuserRoutes = require('./src/routes/webuser.route');
 
 // create employee routes
 app.use('/api/v1/employee', employeeRoutes);
 app.use('/api/v1/college', collegeRoutes);
 app.use('/api/v1/student', studentRoutes);
+app.use('/api/v1/section', sectionRoutes);
+app.use('/api/v1/webuser', webuserRoutes);
 
 // listen to the port
 app.listen(port, ()=>{

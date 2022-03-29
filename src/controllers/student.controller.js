@@ -26,21 +26,21 @@ exports.getStudentByID = (req, res)=>{
     })
 }
 
-// // create new student
-// exports.createNewStudent = (req, res) =>{
-//     const studentReqData = new StudentModel(req.body);
-//     console.log('studentReqData', studentReqData);
-//     // check null
-//     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-//         res.send(400).send({success: false, message: 'Please fill all fields'});
-//     }else{
-//         StudentModel.createStudent(studentReqData, (err, student)=>{
-//             if(err)
-//             res.send(err);
-//             res.json({status: true, message: 'Student Created Successfully', data: student.insertId})
-//         })
-//     }
-// }
+// create new student
+exports.createNewStudent = (req, res) =>{
+    const studentReqData = new StudentModel(req.body);
+    console.log('studentReqData', studentReqData);
+    // check null
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        StudentModel.createStudent(studentReqData, (err, student)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Student Created Successfully', data: student.insertId})
+        })
+    }
+}
 
 // // update student
 // exports.updateStudent = (req, res)=>{
