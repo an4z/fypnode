@@ -10,10 +10,10 @@ const mysql = require('mysql');
 // });
 
 const dbConn = mysql.createConnection({
-    host: 'sql6.freemysqlhosting.net',
-    user: 'sql6483256',
-    password: 'QhMrAePMA9',
-    database: 'sql6483256'
+    host: 'taalika.chbkfqrbx6yy.ap-south-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'mypassword',
+    database: 'taalika'
 });
 
 dbConn.connect(function(error){
