@@ -23,6 +23,7 @@ const collegeRoutes = require('./src/routes/college.route');
 const studentRoutes = require('./src/routes/student.route');
 const sectionRoutes = require('./src/routes/section.route');
 const webuserRoutes = require('./src/routes/webuser.route');
+const teacherRoutes = require('./src/routes/teacher.route');
 
 // create employee routes
 app.use('/api/v1/employee', employeeRoutes);
@@ -30,6 +31,7 @@ app.use('/api/v1/college', collegeRoutes);
 app.use('/api/v1/student', studentRoutes);
 app.use('/api/v1/section', sectionRoutes);
 app.use('/api/v1/webuser', webuserRoutes);
+app.use('/api/v1/teacher', teacherRoutes);
 
 // listen to the port
 app.listen(port, ()=>{
