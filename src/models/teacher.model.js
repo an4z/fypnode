@@ -4,6 +4,7 @@ var Teacher = function(teacher){
     this.teacherID = teacher.teacherID;
     this.collegeID = teacher.collegeID;
     this.teacherUsn = teacher.teacherUsn;
+    this.name = teacher.name;
 
 }
 
