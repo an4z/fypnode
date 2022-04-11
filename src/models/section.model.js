@@ -2,7 +2,10 @@ var dbConn  = require('../../config/db.config');
 
 var Section = function(section){
     this.sectionID = section.ID;
-    this.sectionName = section.SectionName;
+    this.sectionName = section.sectionName;
+    this.semester = section.semester;
+    this.collegeID = section.collegeID;
+    this.facultyID = section.facultyID;
 }
 
 // get all sections
@@ -41,18 +44,18 @@ Section.getSectionByID = (id, result)=>{
     })
 }
 
-// // create new section
-// Section.createSection = (sectionReqData, result) =>{
-//     dbConn.query('INSERT INTO sections SET ? ', sectionReqData, (err, res)=>{
-//         if(err){
-//             console.log('Error while inserting data');
-//             result(null, err);
-//         }else{
-//             console.log('Section created successfully');
-//             result(null, res)
-//         }
-//     })
-// }
+// create new section
+Section.createSection = (sectionReqData, result) =>{
+    dbConn.query('INSERT INTO section SET ? ', sectionReqData, (err, res)=>{
+        if(err){
+            console.log('Error while inserting data');
+            result(null, err);
+        }else{
+            console.log('Section created successfully');
+            result(null, res)
+        }
+    })
+}
 
 // // update section
 // Section.updateSection = (id, sectionReqData, result)=>{

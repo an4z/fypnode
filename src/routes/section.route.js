@@ -9,8 +9,8 @@ router.get('/', sectionController.getSectionList);
 // get section by ID
 router.get('/:id',sectionController.getSectionByID);
 
-// // create new section
-// router.post('/', sectionController.createNewSection);
+// create new section
+router.post('/', sectionController.createNewSection);
 
 // // update section
 // router.put('/:id', sectionController.updateSection);

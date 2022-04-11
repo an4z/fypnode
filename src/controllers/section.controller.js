@@ -26,21 +26,21 @@ exports.getSectionByID = (req, res)=>{
     })
 }
 
-// // create new section
-// exports.createNewSection = (req, res) =>{
-//     const sectionReqData = new SectionModel(req.body);
-//     console.log('sectionReqData', sectionReqData);
-//     // check null
-//     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-//         res.send(400).send({success: false, message: 'Please fill all fields'});
-//     }else{
-//         SectionModel.createSection(sectionReqData, (err, section)=>{
-//             if(err)
-//             res.send(err);
-//             res.json({status: true, message: 'Section Created Successfully', data: section.insertId})
-//         })
-//     }
-// }
+// create new section
+exports.createNewSection = (req, res) =>{
+    const sectionReqData = new SectionModel(req.body);
+    console.log('sectionReqData', sectionReqData);
+    // check null
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        SectionModel.createSection(sectionReqData, (err, section)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Section Created Successfully', data: section.insertId})
+        })
+    }
+}
 
 // // update section
 // exports.updateSection = (req, res)=>{
