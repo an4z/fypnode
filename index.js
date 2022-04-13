@@ -37,6 +37,7 @@ const teacherRoutes = require('./src/routes/teacher.route');
 const facultyRoutes = require('./src/routes/faculty.route');
 const classroomRoutes = require('./src/routes/classroom.route');
 const blockRoutes = require('./src/routes/block.route');
+const scheduleRoutes = require('./src/routes/schedule.route');
 const req = require('express/lib/request');
 
 // create employee routes
@@ -49,6 +50,7 @@ app.use('/api/v1/teacher', teacherRoutes);
 app.use('/api/v1/faculty', facultyRoutes);
 app.use('/api/v1/classroom', classroomRoutes);
 app.use('/api/v1/block', blockRoutes);
+app.use('/api/v1/schedule', scheduleRoutes);
 
 // listen to the port
 app.listen(port, () => {
