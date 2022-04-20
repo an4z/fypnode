@@ -3,7 +3,7 @@ const BlockModel = require('../models/block.model');
 
 // get all block list
 exports.getBlockList = (req, res)=> {
-    //console.log('here all blocks list');
+
     BlockModel.getAllBlocks((err, blocks) =>{
         console.log('We are here');
         if(err)
@@ -14,10 +14,8 @@ exports.getBlockList = (req, res)=> {
 }
 
 
-
 // get block by ID
 exports.getBlockByID = (req, res)=>{
-    //console.log('get emp by id');
     BlockModel.getBlockByID(req.params.id, (err, block)=>{
         if(err)
         res.send(err);
@@ -42,27 +40,27 @@ exports.createNewBlock = (req, res) =>{
     }
 }
 
-// // update block
-// exports.updateBlock = (req, res)=>{
-//     const blockReqData = new BlockModel(req.body);
-//     console.log('blockReqData update', blockReqData);
-//     // check null
-//     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-//         res.send(400).send({success: false, message: 'Please fill all fields'});
-//     }else{
-//         BlockModel.updateBlock(req.params.id, blockReqData, (err, block)=>{
-//             if(err)
-//             res.send(err);
-//             res.json({status: true, message: 'Block updated Successfully'})
-//         })
-//     }
-// }
+// update block
+exports.updateBlock = (req, res)=>{
+    const blockReqData = new BlockModel(req.body);
+    console.log('blockReqData update', blockReqData);
+    // check null
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        BlockModel.updateBlock(req.params.id, blockReqData, (err, block)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Block updated Successfully'})
+        })
+    }
+}
 
-// // delete block
-// exports.deleteBlock = (req, res)=>{
-//     BlockModel.deleteBlock(req.params.id, (err, block)=>{
-//         if(err)
-//         res.send(err);
-//         res.json({success:true, message: 'Block deleted successully!'});
-//     })
-// }
+// delete block
+exports.deleteBlock = (req, res)=>{
+    BlockModel.deleteBlock(req.params.id, (err, block)=>{
+        if(err)
+        res.send(err);
+        res.json({success:true, message: 'Block deleted successully!'});
+    })
+}
