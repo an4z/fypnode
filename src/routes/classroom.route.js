@@ -12,11 +12,11 @@ router.get('/:id',classroomController.getClassroomByID);
 // create new classroom
 router.post('/', classroomController.createNewClassroom);
 
-// // update classroom
-// router.put('/:id', classroomController.updateClassroom);
+// update classroom
+router.put('/:id', classroomController.updateClassroom);
 
-// // delete classroom
-// router.delete('/:id',classroomController.deleteClassroom);
+// delete classroom
+router.delete('/:id',classroomController.deleteClassroom);
 
 // //get all classrooms
 // router.get('/classroom', classroomController.getClassroomList);

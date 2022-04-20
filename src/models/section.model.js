@@ -57,38 +57,30 @@ Section.createSection = (sectionReqData, result) =>{
     })
 }
 
-// // update section
-// Section.updateSection = (id, sectionReqData, result)=>{
-//     dbConn.query("UPDATE sections SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [sectionReqData.first_name,sectionReqData.last_name,sectionReqData.email,sectionReqData.phone,sectionReqData.organization,sectionReqData.designation,sectionReqData.salary, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while updating the section');
-//             result(null, err);
-//         }else{
-//             console.log("Section updated successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// update section
+Section.updateSection = (id, sectionReqData, result)=>{
+    dbConn.query("UPDATE section SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [sectionReqData.first_name,sectionReqData.last_name,sectionReqData.email,sectionReqData.phone,sectionReqData.organization,sectionReqData.designation,sectionReqData.salary, id], (err, res)=>{
+        if(err){
+            console.log('Error while updating the section');
+            result(null, err);
+        }else{
+            console.log("Section updated successfully");
+            result(null, res);
+        }
+    });
+}
 
-// // delete section
-// Section.deleteSection = (id, result)=>{
-//     // dbConn.query('DELETE FROM sections WHERE id=?', [id], (err, res)=>{
-//     //     if(err){
-//     //         console.log('Error while deleting the section');
-//     //         result(null, err);
-//     //     }else{
-//     //         result(null, res);
-//     //     }
-//     // })
-//     dbConn.query("UPDATE sections SET is_deleted=? WHERE id = ?", [1, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while deleting the section');
-//             result(null, err);
-//         }else{
-//             console.log("Section deleted successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// delete section
+Section.deleteSection = (id, result)=>{
+    dbConn.query('DELETE FROM section WHERE id=?', [id], (err, res)=>{
+        if(err){
+            console.log('Error while deleting the section');
+            result(null, err);
+        }else{
+            result(null, res);
+        }
+    })
+    
+}
 
 module.exports = Section;

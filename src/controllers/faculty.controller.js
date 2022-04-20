@@ -42,27 +42,27 @@ exports.createNewFaculty = (req, res) =>{
     }
 }
 
-// // update faculty
-// exports.updateFaculty = (req, res)=>{
-//     const facultyReqData = new FacultyModel(req.body);
-//     console.log('facultyReqData update', facultyReqData);
-//     // check null
-//     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-//         res.send(400).send({success: false, message: 'Please fill all fields'});
-//     }else{
-//         FacultyModel.updateFaculty(req.params.id, facultyReqData, (err, faculty)=>{
-//             if(err)
-//             res.send(err);
-//             res.json({status: true, message: 'Faculty updated Successfully'})
-//         })
-//     }
-// }
+// update faculty
+exports.updateFaculty = (req, res)=>{
+    const facultyReqData = new FacultyModel(req.body);
+    console.log('facultyReqData update', facultyReqData);
+    // check null
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        FacultyModel.updateFaculty(req.params.id, facultyReqData, (err, faculty)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Faculty updated Successfully'})
+        })
+    }
+}
 
-// // delete faculty
-// exports.deleteFaculty = (req, res)=>{
-//     FacultyModel.deleteFaculty(req.params.id, (err, faculty)=>{
-//         if(err)
-//         res.send(err);
-//         res.json({success:true, message: 'Faculty deleted successully!'});
-//     })
-// }
+// delete faculty
+exports.deleteFaculty = (req, res)=>{
+    FacultyModel.deleteFaculty(req.params.id, (err, faculty)=>{
+        if(err)
+        res.send(err);
+        res.json({success:true, message: 'Faculty deleted successully!'});
+    })
+}

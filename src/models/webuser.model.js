@@ -73,25 +73,16 @@ Webuser.updateWebuser = (id, webuserReqData, result)=>{
     });
 }
 
-// // delete webuser
-// Webuser.deleteWebuser = (id, result)=>{
-//     // dbConn.query('DELETE FROM webusers WHERE id=?', [id], (err, res)=>{
-//     //     if(err){
-//     //         console.log('Error while deleting the webuser');
-//     //         result(null, err);
-//     //     }else{
-//     //         result(null, res);
-//     //     }
-//     // })
-//     dbConn.query("UPDATE webusers SET is_deleted=? WHERE id = ?", [1, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while deleting the webuser');
-//             result(null, err);
-//         }else{
-//             console.log("Webuser deleted successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// delete webuser
+Webuser.deleteWebuser = (id, result)=>{
+    dbConn.query('DELETE FROM webuser WHERE id=?', [id], (err, res)=>{
+        if(err){
+            console.log('Error while deleting the webuser');
+            result(null, err);
+        }else{
+            result(null, res);
+        }
+    })
+}
 
 module.exports = Webuser;

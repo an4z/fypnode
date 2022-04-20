@@ -12,11 +12,11 @@ router.get('/:id',teacherController.getTeacherByID);
 // create new teacher
 router.post('/', teacherController.createNewTeacher);
 
-// // update teacher
-// router.put('/:id', teacherController.updateTeacher);
+// update teacher
+router.put('/:id', teacherController.updateTeacher);
 
-// // delete teacher
-// router.delete('/:id',teacherController.deleteTeacher);
+// delete teacher
+router.delete('/:id',teacherController.deleteTeacher);
 
 // //get all teachers
 // router.get('/teacher', teacherController.getTeacherList);

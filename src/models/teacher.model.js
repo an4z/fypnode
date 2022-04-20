@@ -58,38 +58,30 @@ Teacher.createTeacher = (teacherReqData, result) =>{
     })
 }
 
-// // update teacher
-// Teacher.updateTeacher = (id, teacherReqData, result)=>{
-//     dbConn.query("UPDATE teachers SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [teacherReqData.first_name,teacherReqData.last_name,teacherReqData.email,teacherReqData.phone,teacherReqData.organization,teacherReqData.designation,teacherReqData.salary, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while updating the teacher');
-//             result(null, err);
-//         }else{
-//             console.log("Teacher updated successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// update teacher
+Teacher.updateTeacher = (id, teacherReqData, result)=>{
+    dbConn.query("UPDATE teacher SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [teacherReqData.first_name,teacherReqData.last_name,teacherReqData.email,teacherReqData.phone,teacherReqData.organization,teacherReqData.designation,teacherReqData.salary, id], (err, res)=>{
+        if(err){
+            console.log('Error while updating the teacher');
+            result(null, err);
+        }else{
+            console.log("Teacher updated successfully");
+            result(null, res);
+        }
+    });
+}
 
-// // delete teacher
-// Teacher.deleteTeacher = (id, result)=>{
-//     // dbConn.query('DELETE FROM teachers WHERE id=?', [id], (err, res)=>{
-//     //     if(err){
-//     //         console.log('Error while deleting the teacher');
-//     //         result(null, err);
-//     //     }else{
-//     //         result(null, res);
-//     //     }
-//     // })
-//     dbConn.query("UPDATE teachers SET is_deleted=? WHERE id = ?", [1, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while deleting the teacher');
-//             result(null, err);
-//         }else{
-//             console.log("Teacher deleted successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// delete teacher
+Teacher.deleteTeacher = (id, result)=>{
+    dbConn.query('DELETE FROM teacher WHERE id=?', [id], (err, res)=>{
+        if(err){
+            console.log('Error while deleting the teacher');
+            result(null, err);
+        }else{
+            result(null, res);
+        }
+    })
+    
+}
 
 module.exports = Teacher;

@@ -12,11 +12,11 @@ router.get('/:id',blockController.getBlockByID);
 // create new block
 router.post('/', blockController.createNewBlock);
 
-// // update block
-// router.put('/:id', blockController.updateBlock);
+// update block
+router.put('/:id', blockController.updateBlock);
 
-// // delete block
-// router.delete('/:id',blockController.deleteBlock);
+// delete block
+router.delete('/:id',blockController.deleteBlock);
 
 // //get all blocks
 // router.get('/block', blockController.getBlockList);

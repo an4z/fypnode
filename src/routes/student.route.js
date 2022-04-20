@@ -12,11 +12,11 @@ router.get('/:id',studentController.getStudentByID);
 // create new student
 router.post('/', studentController.createNewStudent);
 
-// // update student
-// router.put('/:id', studentController.updateStudent);
+// update student
+router.put('/:id', studentController.updateStudent);
 
-// // delete student
-// router.delete('/:id',studentController.deleteStudent);
+// delete student
+router.delete('/:id',studentController.deleteStudent);
 
 // //get all students
 // router.get('/student', studentController.getStudentList);

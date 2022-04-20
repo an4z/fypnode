@@ -12,11 +12,11 @@ router.get('/:id',sectionController.getSectionByID);
 // create new section
 router.post('/', sectionController.createNewSection);
 
-// // update section
-// router.put('/:id', sectionController.updateSection);
+// update section
+router.put('/:id', sectionController.updateSection);
 
-// // delete section
-// router.delete('/:id',sectionController.deleteSection);
+// delete section
+router.delete('/:id',sectionController.deleteSection);
 
 // //get all sections
 // router.get('/section', sectionController.getSectionList);

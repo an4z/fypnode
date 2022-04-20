@@ -55,38 +55,29 @@ Block.createBlock = (blockReqData, result) =>{
     })
 }
 
-// // update block
-// Block.updateBlock = (id, blockReqData, result)=>{
-//     dbConn.query("UPDATE blocks SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [blockReqData.first_name,blockReqData.last_name,blockReqData.email,blockReqData.phone,blockReqData.organization,blockReqData.designation,blockReqData.salary, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while updating the block');
-//             result(null, err);
-//         }else{
-//             console.log("Block updated successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// update block
+Block.updateBlock = (id, blockReqData, result)=>{
+    dbConn.query("UPDATE block SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [blockReqData.first_name,blockReqData.last_name,blockReqData.email,blockReqData.phone,blockReqData.organization,blockReqData.designation,blockReqData.salary, id], (err, res)=>{
+        if(err){
+            console.log('Error while updating the block');
+            result(null, err);
+        }else{
+            console.log("Block updated successfully");
+            result(null, res);
+        }
+    });
+}
 
-// // delete block
-// Block.deleteBlock = (id, result)=>{
-//     // dbConn.query('DELETE FROM blocks WHERE id=?', [id], (err, res)=>{
-//     //     if(err){
-//     //         console.log('Error while deleting the block');
-//     //         result(null, err);
-//     //     }else{
-//     //         result(null, res);
-//     //     }
-//     // })
-//     dbConn.query("UPDATE blocks SET is_deleted=? WHERE id = ?", [1, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while deleting the block');
-//             result(null, err);
-//         }else{
-//             console.log("Block deleted successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// delete block
+Block.deleteBlock = (id, result)=>{
+    dbConn.query('DELETE FROM block WHERE id=?', [id], (err, res)=>{
+        if(err){
+            console.log('Error while deleting the block');
+            result(null, err);
+        }else{
+            result(null, res);
+        }
+    })
+}
 
 module.exports = Block;

@@ -42,27 +42,27 @@ exports.createNewSchedule = (req, res) =>{
     }
 }
 
-// // update schedule
-// exports.updateSchedule = (req, res)=>{
-//     const scheduleReqData = new ScheduleModel(req.body);
-//     console.log('scheduleReqData update', scheduleReqData);
-//     // check null
-//     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-//         res.send(400).send({success: false, message: 'Please fill all fields'});
-//     }else{
-//         ScheduleModel.updateSchedule(req.params.id, scheduleReqData, (err, schedule)=>{
-//             if(err)
-//             res.send(err);
-//             res.json({status: true, message: 'Schedule updated Successfully'})
-//         })
-//     }
-// }
+// update schedule
+exports.updateSchedule = (req, res)=>{
+    const scheduleReqData = new ScheduleModel(req.body);
+    console.log('scheduleReqData update', scheduleReqData);
+    // check null
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        ScheduleModel.updateSchedule(req.params.id, scheduleReqData, (err, schedule)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Schedule updated Successfully'})
+        })
+    }
+}
 
-// // delete schedule
-// exports.deleteSchedule = (req, res)=>{
-//     ScheduleModel.deleteSchedule(req.params.id, (err, schedule)=>{
-//         if(err)
-//         res.send(err);
-//         res.json({success:true, message: 'Schedule deleted successully!'});
-//     })
-// }
+// delete schedule
+exports.deleteSchedule = (req, res)=>{
+    ScheduleModel.deleteSchedule(req.params.id, (err, schedule)=>{
+        if(err)
+        res.send(err);
+        res.json({success:true, message: 'Schedule deleted successully!'});
+    })
+}

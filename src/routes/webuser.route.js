@@ -15,8 +15,8 @@ router.post('/', webuserController.createNewWebuser);
 // update webuser
 router.put('/:id', webuserController.updateWebuser);
 
-// // delete webuser
-// router.delete('/:id',webuserController.deleteWebuser);
+// delete webuser
+router.delete('/:id',webuserController.deleteWebuser);
 
 // //get all webusers
 // router.get('/webuser', webuserController.getWebuserList);

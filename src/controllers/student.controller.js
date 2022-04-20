@@ -42,27 +42,27 @@ exports.createNewStudent = (req, res) =>{
     }
 }
 
-// // update student
-// exports.updateStudent = (req, res)=>{
-//     const studentReqData = new StudentModel(req.body);
-//     console.log('studentReqData update', studentReqData);
-//     // check null
-//     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-//         res.send(400).send({success: false, message: 'Please fill all fields'});
-//     }else{
-//         StudentModel.updateStudent(req.params.id, studentReqData, (err, student)=>{
-//             if(err)
-//             res.send(err);
-//             res.json({status: true, message: 'Student updated Successfully'})
-//         })
-//     }
-// }
+// update student
+exports.updateStudent = (req, res)=>{
+    const studentReqData = new StudentModel(req.body);
+    console.log('studentReqData update', studentReqData);
+    // check null
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        StudentModel.updateStudent(req.params.id, studentReqData, (err, student)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Student updated Successfully'})
+        })
+    }
+}
 
-// // delete student
-// exports.deleteStudent = (req, res)=>{
-//     StudentModel.deleteStudent(req.params.id, (err, student)=>{
-//         if(err)
-//         res.send(err);
-//         res.json({success:true, message: 'Student deleted successully!'});
-//     })
-// }
+// delete student
+exports.deleteStudent = (req, res)=>{
+    StudentModel.deleteStudent(req.params.id, (err, student)=>{
+        if(err)
+        res.send(err);
+        res.json({success:true, message: 'Student deleted successully!'});
+    })
+}

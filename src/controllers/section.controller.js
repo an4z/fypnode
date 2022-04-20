@@ -42,27 +42,27 @@ exports.createNewSection = (req, res) =>{
     }
 }
 
-// // update section
-// exports.updateSection = (req, res)=>{
-//     const sectionReqData = new SectionModel(req.body);
-//     console.log('sectionReqData update', sectionReqData);
-//     // check null
-//     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-//         res.send(400).send({success: false, message: 'Please fill all fields'});
-//     }else{
-//         SectionModel.updateSection(req.params.id, sectionReqData, (err, section)=>{
-//             if(err)
-//             res.send(err);
-//             res.json({status: true, message: 'Section updated Successfully'})
-//         })
-//     }
-// }
+// update section
+exports.updateSection = (req, res)=>{
+    const sectionReqData = new SectionModel(req.body);
+    console.log('sectionReqData update', sectionReqData);
+    // check null
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        SectionModel.updateSection(req.params.id, sectionReqData, (err, section)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Section updated Successfully'})
+        })
+    }
+}
 
-// // delete section
-// exports.deleteSection = (req, res)=>{
-//     SectionModel.deleteSection(req.params.id, (err, section)=>{
-//         if(err)
-//         res.send(err);
-//         res.json({success:true, message: 'Section deleted successully!'});
-//     })
-// }
+// delete section
+exports.deleteSection = (req, res)=>{
+    SectionModel.deleteSection(req.params.id, (err, section)=>{
+        if(err)
+        res.send(err);
+        res.json({success:true, message: 'Section deleted successully!'});
+    })
+}

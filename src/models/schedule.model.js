@@ -63,38 +63,29 @@ Schedule.createSchedule = (scheduleReqData, result) =>{
     })
 }
 
-// // update schedule
-// Schedule.updateSchedule = (id, scheduleReqData, result)=>{
-//     dbConn.query("UPDATE schedules SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [scheduleReqData.first_name,scheduleReqData.last_name,scheduleReqData.email,scheduleReqData.phone,scheduleReqData.organization,scheduleReqData.designation,scheduleReqData.salary, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while updating the schedule');
-//             result(null, err);
-//         }else{
-//             console.log("Schedule updated successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// update schedule
+Schedule.updateSchedule = (id, scheduleReqData, result)=>{
+    dbConn.query("UPDATE schedule SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [scheduleReqData.first_name,scheduleReqData.last_name,scheduleReqData.email,scheduleReqData.phone,scheduleReqData.organization,scheduleReqData.designation,scheduleReqData.salary, id], (err, res)=>{
+        if(err){
+            console.log('Error while updating the schedule');
+            result(null, err);
+        }else{
+            console.log("Schedule updated successfully");
+            result(null, res);
+        }
+    });
+}
 
-// // delete schedule
-// Schedule.deleteSchedule = (id, result)=>{
-//     // dbConn.query('DELETE FROM schedules WHERE id=?', [id], (err, res)=>{
-//     //     if(err){
-//     //         console.log('Error while deleting the schedule');
-//     //         result(null, err);
-//     //     }else{
-//     //         result(null, res);
-//     //     }
-//     // })
-//     dbConn.query("UPDATE schedules SET is_deleted=? WHERE id = ?", [1, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while deleting the schedule');
-//             result(null, err);
-//         }else{
-//             console.log("Schedule deleted successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// delete schedule
+Schedule.deleteSchedule = (id, result)=>{
+    dbConn.query('DELETE FROM schedule WHERE id=?', [id], (err, res)=>{
+        if(err){
+            console.log('Error while deleting the schedule');
+            result(null, err);
+        }else{
+            result(null, res);
+        }
+    })
+}
 
 module.exports = Schedule;

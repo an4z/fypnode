@@ -60,38 +60,30 @@ Student.createStudent = (studentReqData, result) =>{
     })
 }
 
-// // update student
-// Student.updateStudent = (id, studentReqData, result)=>{
-//     dbConn.query("UPDATE students SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [studentReqData.first_name,studentReqData.last_name,studentReqData.email,studentReqData.phone,studentReqData.organization,studentReqData.designation,studentReqData.salary, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while updating the student');
-//             result(null, err);
-//         }else{
-//             console.log("Student updated successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// update student
+Student.updateStudent = (id, studentReqData, result)=>{
+    dbConn.query("UPDATE student SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [studentReqData.first_name,studentReqData.last_name,studentReqData.email,studentReqData.phone,studentReqData.organization,studentReqData.designation,studentReqData.salary, id], (err, res)=>{
+        if(err){
+            console.log('Error while updating the student');
+            result(null, err);
+        }else{
+            console.log("Student updated successfully");
+            result(null, res);
+        }
+    });
+}
 
-// // delete student
-// Student.deleteStudent = (id, result)=>{
-//     // dbConn.query('DELETE FROM students WHERE id=?', [id], (err, res)=>{
-//     //     if(err){
-//     //         console.log('Error while deleting the student');
-//     //         result(null, err);
-//     //     }else{
-//     //         result(null, res);
-//     //     }
-//     // })
-//     dbConn.query("UPDATE students SET is_deleted=? WHERE id = ?", [1, id], (err, res)=>{
-//         if(err){
-//             console.log('Error while deleting the student');
-//             result(null, err);
-//         }else{
-//             console.log("Student deleted successfully");
-//             result(null, res);
-//         }
-//     });
-// }
+// delete student
+Student.deleteStudent = (id, result)=>{
+    dbConn.query('DELETE FROM student WHERE id=?', [id], (err, res)=>{
+        if(err){
+            console.log('Error while deleting the student');
+            result(null, err);
+        }else{
+            result(null, res);
+        }
+    })
+    
+}
 
 module.exports = Student;

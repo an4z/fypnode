@@ -58,11 +58,11 @@ exports.updateWebuser = (req, res)=>{
     }
 }
 
-// // delete webuser
-// exports.deleteWebuser = (req, res)=>{
-//     WebuserModel.deleteWebuser(req.params.id, (err, webuser)=>{
-//         if(err)
-//         res.send(err);
-//         res.json({success:true, message: 'Webuser deleted successully!'});
-//     })
-// }
+// delete webuser
+exports.deleteWebuser = (req, res)=>{
+    WebuserModel.deleteWebuser(req.params.id, (err, webuser)=>{
+        if(err)
+        res.send(err);
+        res.json({success:true, message: 'Webuser deleted successully!'});
+    })
+}

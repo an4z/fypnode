@@ -12,11 +12,11 @@ router.get('/:id',facultyController.getFacultyByID);
 // create new faculty
 router.post('/', facultyController.createNewFaculty);
 
-// // update faculty
-// router.put('/:id', facultyController.updateFaculty);
+// update faculty
+router.put('/:id', facultyController.updateFaculty);
 
-// // delete faculty
-// router.delete('/:id',facultyController.deleteFaculty);
+// delete faculty
+router.delete('/:id',facultyController.deleteFaculty);
 
 // //get all facultys
 // router.get('/faculty', facultyController.getFacultyList);

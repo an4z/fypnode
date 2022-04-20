@@ -12,11 +12,11 @@ router.get('/:id',scheduleController.getScheduleByID);
 // create new schedule
 router.post('/', scheduleController.createNewSchedule);
 
-// // update schedule
-// router.put('/:id', scheduleController.updateSchedule);
+// update schedule
+router.put('/:id', scheduleController.updateSchedule);
 
-// // delete schedule
-// router.delete('/:id',scheduleController.deleteSchedule);
+// delete schedule
+router.delete('/:id',scheduleController.deleteSchedule);
 
 // //get all schedules
 // router.get('/schedule', scheduleController.getScheduleList);
