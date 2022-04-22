@@ -73,7 +73,7 @@ Teacher.updateTeacher = (id, teacherReqData, result)=>{
 
 // delete teacher
 Teacher.deleteTeacher = (id, result)=>{
-    dbConn.query('DELETE FROM teacher WHERE id=?', [id], (err, res)=>{
+    dbConn.query('DELETE FROM teacher WHERE teacherID=?', [id], (err, res)=>{
         if(err){
             console.log('Error while deleting the teacher');
             result(null, err);

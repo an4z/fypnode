@@ -78,7 +78,7 @@ Schedule.updateSchedule = (id, scheduleReqData, result)=>{
 
 // delete schedule
 Schedule.deleteSchedule = (id, result)=>{
-    dbConn.query('DELETE FROM schedule WHERE id=?', [id], (err, res)=>{
+    dbConn.query('DELETE FROM schedule WHERE scheduleID=?', [id], (err, res)=>{
         if(err){
             console.log('Error while deleting the schedule');
             result(null, err);

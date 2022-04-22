@@ -77,7 +77,7 @@ Collegenotice.updateCollegenotice = (id, collegenoticeReqData, result)=>{
 
 // delete collegenotice
 Collegenotice.deleteCollegenotice = (id, result)=>{
-    dbConn.query('DELETE FROM collegenotice WHERE id=?', [id], (err, res)=>{
+    dbConn.query('DELETE FROM collegenotice WHERE ID=?', [id], (err, res)=>{
         if(err){
             console.log('Error while deleting the collegenotice');
             result(null, err);

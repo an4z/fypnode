@@ -72,7 +72,7 @@ Section.updateSection = (id, sectionReqData, result)=>{
 
 // delete section
 Section.deleteSection = (id, result)=>{
-    dbConn.query('DELETE FROM section WHERE id=?', [id], (err, res)=>{
+    dbConn.query('DELETE FROM section WHERE sectionID=?', [id], (err, res)=>{
         if(err){
             console.log('Error while deleting the section');
             result(null, err);

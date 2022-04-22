@@ -71,7 +71,7 @@ Classroom.updateClassroom = (id, classroomReqData, result)=>{
 
 // delete classroom
 Classroom.deleteClassroom = (id, result)=>{
-    dbConn.query('DELETE FROM classroom WHERE id=?', [id], (err, res)=>{
+    dbConn.query('DELETE FROM classroom WHERE classroomID=?', [id], (err, res)=>{
         if(err){
             console.log('Error while deleting the classroom');
             result(null, err);
